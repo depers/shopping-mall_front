@@ -1,14 +1,14 @@
 /*
  * @Author: depers(fengxiao) 
  * @Date: 2019-04-28 11:29:13 
- * @Last Modified by: depers(fengxiao)
- * @Last Modified time: 2019-04-28 20:32:40
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2019-05-29 18:12:25
  */
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
-// 环境变量的配置
+// 环境变量的配置, dev/ online
 var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 
 
@@ -32,8 +32,9 @@ var config = {
         'login': ['./src/page/login/index.js'],
     },
     output: {
+        // 存放文件的路径
         path: './dist',
-        // webpack-dev-server配置
+        // webpack-dev-server配置，访问文件的路径
         publicPath: '/dist', 
         // 配置输出文件
         filename: 'js/[name].js'
@@ -45,10 +46,12 @@ var config = {
 
     module: {
         loaders: [
+            // 对css的loader
             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
             },
+            // 对图片、字体、icon的loader
             { 
                 test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, 
                 loader: 'url-loader?limit=100&name=resource/[name].[ext]' 

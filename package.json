@@ -1,40 +1,36 @@
 {
-  "name": "shopping-mall_front",
-  "version": "1.0.0",
-  "description": "mall前端代码",
-  "main": "index.js",
-  "scripts": {
-
-    "dev": "WEBPACK_ENV=dev webpack-dev-server --inline --port 8088",
-
-    "win_dev": "set WEBPACK_ENV=dev && webpack-dev-server --inline --port 8088",
-
-    "dist": "WEBPACK_ENV=online webpack -p",
-
-    "dist": "set WEBPACK_ENV=online && webpack -p"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/depers/shopping-mall_front.git"
-  },
-  "author": "depers",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/depers/shopping-mall_front/issues"
-  },
-  "homepage": "https://github.com/depers/shopping-mall_front#readme",
-  "devDependencies": {
-    "css-loader": "^2.1.1",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.11.1",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^2.28.0",
-    "style-loader": "^0.23.1",
-    "url-loader": "^0.5.8",
-    "webpack": "^1.15.0",
-    "webpack-dev-server": "^1.16.5"
-  },
-  "dependencies": {
-    "jquery": "^3.4.0"
-  }
+	"name": "shopping-mall_front",
+	"version": "1.0.0",
+	"description": "mall前端代码",
+	"main": "index.js",
+	"scripts": {
+		"dev": "WEBPACK_ENV=dev webpack-dev-server --inline --port 8088",
+		"win_dev": "set WEBPACK_ENV=dev && webpack-dev-server --inline --port 8088",
+		"dist": "WEBPACK_ENV=online webpack -p",
+		"win_dist": "set WEBPACK_ENV=online && webpack -p"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/depers/shopping-mall_front.git"
+	},
+	"author": "depers",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/depers/shopping-mall_front/issues"
+	},
+	"homepage": "https://github.com/depers/shopping-mall_front#readme",
+	"devDependencies": {
+		"css-loader": "^2.1.1",
+		"extract-text-webpack-plugin": "^1.0.1",
+		"file-loader": "^0.11.1",
+		"html-loader": "^0.5.5",
+		"html-webpack-plugin": "^2.28.0",
+		"style-loader": "^0.23.1",
+		"url-loader": "^0.5.8",
+		"webpack": "^1.15.0",
+		"webpack-dev-server": "^1.16.5"
+	},
+	"dependencies": {
+		"jquery": "^3.4.0"
+	}
 }
