@@ -1,8 +1,8 @@
 /*
  * @Author: depers(fengxiao) 
  * @Date: 2019-04-28 11:29:13 
- * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2019-05-29 18:12:25
+ * @Last Modified by: depers
+ * @Last Modified time: 2019-05-30 17:44:25
  */
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -59,6 +59,17 @@ var config = {
         ],
     },
 
+    resolve: {
+        // 别名配置，方便引用
+        alias: {
+            util         : __dirname + '/src/util',
+            page         : __dirname + '/src/page',
+            service      : __dirname + '/src/service',
+            image        : __dirname + '/src/image',
+            node_modules : __dirname + '/node_modules',
+        }
+    },
+    
     plugins: [
         // 提取公共模块，独立通用模块到js/base.js
         new webpack.optimize.CommonsChunkPlugin({
