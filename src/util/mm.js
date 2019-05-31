@@ -2,7 +2,7 @@
  * @Author: depers 
  * @Date: 2019-05-30 14:33:51 
  * @Last Modified by: depers
- * @Last Modified time: 2019-05-30 16:42:00
+ * @Last Modified time: 2019-05-31 15:55:31
  */
 'use strict'
 
@@ -39,12 +39,12 @@ var _mm = {
             }
         });
     },
-     // 统一登录处理
-     doLogin: function () {
+    // 统一登录处理
+    doLogin: function () {
         window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
     },
     // 统一服务器地址的获取
-    getServeUrl: function (path) {
+    getServerUrl: function (path) {
         return conf.serverHost + path;
     },
     // 获取url参数

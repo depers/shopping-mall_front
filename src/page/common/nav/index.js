@@ -2,12 +2,12 @@
  * @Author: depers 
  * @Date: 2019-05-31 11:00:43 
  * @Last Modified by: depers
- * @Last Modified time: 2019-05-31 12:01:31
+ * @Last Modified time: 2019-05-31 15:54:59
  */
 'use strict';
 var _mm = require('util/mm.js');
-var _user = require('service/user-serivce.js');
-var _cart = require('service/cart-serivce.js');
+var _user = require('service/user-service.js');
+var _cart = require('service/cart-service.js');
 require('./index.css');
 
 // 导航
@@ -41,7 +41,7 @@ var nav = {
     },
     // 加载用户信息
     loadUserInfo : function(){
-        _mm.checkLogin(
+        _user.checkLogin(
             function(res){
                 $('.user.not-login').hide().sublings('.user.login').show()
                     .find('.username').text(res.username);

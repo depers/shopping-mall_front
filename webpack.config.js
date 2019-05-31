@@ -2,7 +2,7 @@
  * @Author: depers(fengxiao) 
  * @Date: 2019-04-28 11:29:13 
  * @Last Modified by: depers
- * @Last Modified time: 2019-05-31 10:31:05
+ * @Last Modified time: 2019-05-31 15:49:35
  */
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -55,6 +55,10 @@ var config = {
             { 
                 test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, 
                 loader: 'url-loader?limit=100&name=resource/[name].[ext]' 
+            },
+            { 
+                test: /\.string$/, 
+                loader: 'html-loader' 
             },
         ],
     },
