@@ -1,0 +1,29 @@
+/*
+ * @Author: depers 
+ * @Date: 2019-05-31 11:00:47 
+ * @Last Modified by: depers
+ * @Last Modified time: 2019-05-31 11:27:37
+ */
+.nav{
+    background: #eee;
+    height: 30px;
+    line-height: 30px;
+}
+/* 用户部分 */
+.nav .user{
+    float: left;
+}
+.nav .user .link{
+    margin-right: 5px;
+}
+.nav .user.login{
+    display: none;
+}
+/* 导航链接部分 */
+.nav .nav-list{
+    float: right;
+}
+.nav .nav-list .nav-item{
+    display: inline-block;
+    margin-left: 5px;
+}
