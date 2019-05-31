@@ -1,0 +1,21 @@
+/*
+ * @Author: depers 
+ * @Date: 2019-05-31 12:11:36 
+ * @Last Modified by: depers
+ * @Last Modified time: 2019-05-31 12:14:09
+ */
+ .footer{
+     padding-bottom: 10px;
+ }
+ .footer .links{
+    text-align: center;
+    color: #666;
+    line-height: 30px;
+}
+.footer .links .link{
+    padding: 0 10px;
+}
+.footer .copyright{
+    text-align: center;
+    line-height: 30px;
+}
