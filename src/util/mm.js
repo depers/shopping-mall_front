@@ -85,7 +85,7 @@ var _mm = {
         }
     },
     // 跳回主页
-    geHome : function(){
+    goHome : function(){
         window.location.href = './index.html';
     }
 };
