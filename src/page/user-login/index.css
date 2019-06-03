@@ -2,7 +2,7 @@
  * @Author: depers 
  * @Date: 2019-06-03 15:41:29 
  * @Last Modified by: depers
- * @Last Modified time: 2019-06-03 16:14:15
+ * @Last Modified time: 2019-06-03 16:48:30
  */
 /* 最外层容器 */
 .page-wrap{
@@ -35,6 +35,7 @@
     border: 1px solid red;
     color: red;
     background: #fde6e6;
+    display: none;
 }
 /* 错误图标 */
 .user-con .user-box .error-icon{

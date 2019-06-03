@@ -2,13 +2,13 @@
  * @Author: depers 
  * @Date: 2019-05-30 14:33:51 
  * @Last Modified by: depers
- * @Last Modified time: 2019-06-03 15:24:25
+ * @Last Modified time: 2019-06-03 17:00:39
  */
 'use strict'
 
 var Hogan = require('hogan.js');
 var conf = {
-    serverHost: 'http://api.bravedawn.cn',
+    serverHost: 'http://39.106.115.25',
 };
 
 var _mm = {
