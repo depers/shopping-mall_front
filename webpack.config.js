@@ -2,7 +2,7 @@
  * @Author: depers(fengxiao) 
  * @Date: 2019-04-28 11:29:13 
  * @Last Modified by: depers
- * @Last Modified time: 2019-05-31 16:18:24
+ * @Last Modified time: 2019-06-03 15:30:13
  */
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -27,11 +27,11 @@ var getHtmlConfig = function(name, title){
 // webpack config
 var config = {
     entry: {
-        // 配置输入文件
-        'common'	: ['./src/page/common/index.js'],
-        'index' 	: ['./src/page/index/index.js'],
-        'login'		: ['./src/page/login/index.js'],
-        'result'	: ['./src/page/result/index.js'],
+        // 配置输入文件，其中common必须和后面路径中的common文件夹对应
+        'common'	    : ['./src/page/common/index.js'],
+        'index' 	    : ['./src/page/index/index.js'],
+        'user-login'	: ['./src/page/user-login/index.js'],
+        'result'	    : ['./src/page/result/index.js'],
     },
     output: {
         // 存放文件的路径
@@ -87,7 +87,7 @@ var config = {
         new ExtractTextPlugin("css/[name].css"),
         // 配置html模板
         new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
-        new HtmlWebpackPlugin(getHtmlConfig('login', '登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-login', '登录')),
         new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
     ]
 };

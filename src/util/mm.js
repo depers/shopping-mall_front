@@ -2,7 +2,7 @@
  * @Author: depers 
  * @Date: 2019-05-30 14:33:51 
  * @Last Modified by: depers
- * @Last Modified time: 2019-05-31 15:55:31
+ * @Last Modified time: 2019-06-03 15:24:25
  */
 'use strict'
 
@@ -41,7 +41,7 @@ var _mm = {
     },
     // 统一登录处理
     doLogin: function () {
-        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },
     // 统一服务器地址的获取
     getServerUrl: function (path) {
