@@ -2,7 +2,7 @@
  * @Author: depers 
  * @Date: 2019-05-31 11:42:08 
  * @Last Modified by: depers
- * @Last Modified time: 2019-06-03 18:51:14
+ * @Last Modified time: 2019-06-04 16:41:18
  */
 'use strict';
 
@@ -54,6 +54,38 @@ var _user = {
     register : function (userInfo, resolve, reject) {
         _mm.request({
             url: _mm.getServerUrl('/user/register.do'),
+            data: userInfo,
+            method: 'POST',
+            success: resolve,
+            error: reject
+        });
+    },
+    // 获取用户密码提示问题
+    getQuestion : function(username, resolve, reject){
+        _mm.request({
+            url: _mm.getServerUrl('/user/forget_get_question.do'),
+            data: {
+                username : username,
+            },
+            method: 'POST',
+            success: resolve,
+            error: reject
+        });
+    },
+    // 检查密码提示问题答案
+    checkAnswer : function(userInfo, resolve, reject){
+        _mm.request({
+            url: _mm.getServerUrl('/user/forget_check_answer.do'),
+            data: userInfo,
+            method: 'POST',
+            success: resolve,
+            error: reject
+        });
+    },
+    // 忘记密码重置新密码
+    resetPassword : function(userInfo, resolve, reject){
+        _mm.request({
+            url: _mm.getServerUrl('/user/forget_reset_password.do'),
             data: userInfo,
             method: 'POST',
             success: resolve,
