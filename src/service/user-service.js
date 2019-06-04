@@ -2,7 +2,7 @@
  * @Author: depers 
  * @Date: 2019-05-31 11:42:08 
  * @Last Modified by: depers
- * @Last Modified time: 2019-06-04 18:41:16
+ * @Last Modified time: 2019-06-04 22:02:15
  */
 'use strict';
 
@@ -105,6 +105,15 @@ var _user = {
     updateUserInfo : function(resolve, reject){
         _mm.request({
             url: _mm.getServerUrl('/user/update_information.do'),
+            method: 'POST',
+            success: resolve,
+            error: reject
+        });
+    },
+    // 登录状态下更改密码
+    updatePassword : function(userInfo, resolve, reject){
+        _mm.request({
+            url: _mm.getServerUrl('/user/reset_password.do'),
             method: 'POST',
             success: resolve,
             error: reject

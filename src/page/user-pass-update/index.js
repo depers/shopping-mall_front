@@ -1,8 +1,8 @@
 /*
  * @Author: depers 
- * @Date: 2019-06-04 18:19:49 
+ * @Date: 2019-06-04 18:50:07 
  * @Last Modified by: depers
- * @Last Modified time: 2019-06-04 18:50:57
+ * @Last Modified time: 2019-06-04 22:05:01
  */
 'use strict';
 
@@ -11,8 +11,6 @@ require('page/common/header/index.js');
 require('page/common/nav/index.js');
 var navSide = require('page/common/nav-side/index.js');
 var _mm = require('util/mm.js');
-var tempalteHtml = require('./index.string');
-var _user = require('service/user-service.js');
 
 
 // page 逻辑部分
@@ -24,41 +22,28 @@ var page = {
     onLoad : function(){
         // 初始化左侧菜单
         navSide.init({
-            name : 'user-center',
+            name : 'user-pass-update',
         });
-        // 加载用户信息
-        this.loadUserInfo();
-    },
-    loadUserInfo : function(){
-        var userHtml = '';
-        _user.getUserInfo(
-            function(res){
-                userHtml = _mm.renderHtml(tempalteHtml, res);
-                $('.panel-body').html(userHtml);
-            },
-            function(errMsg){
-                _mm.errorTips(errMsg);
-            }
-        );
     },
     bindEvent : function(){
         var _this = this;
         // 点击提交后的动作
         $(document).on('click', '.btn-submit', function(){
             var userInfo = {
-                    phone       : $.trim($('#phone').val()),
-                    email       : $.trim($('#email').val()),
-                    question    : $.trim($('#question').val()),
-                    answer      : $.trim($('#answer').val()),
+                    password         : $.trim($('#password').val()),
+                    passwordNew      : $.trim($('#password-new').val()),
+                    passwordConfirm  : $.trim($('#password-confirm').val()),
                 },
                 validateResult = _this.validateForm(userInfo);
             if(validateResult.status){
                 // 更改用户信息
-                _user.updateUserInfo(
-                    userInfo,
+                _user.updatePassword(
+                    {
+                        passwordOld : userInfo.password,
+                        passwordNew : userInfo.passwordNew
+                    },
                     function(res, msg){
                         _mm.successTips(msg);
-                        window.location.href = './user-center.html';
                     },
                     function(errMsg){
                         _mm.errorTips(errMsg);
@@ -75,24 +60,19 @@ var page = {
             status: false,
             msg: ''
         };
-        // 验证手机号
-        if (!_mm.validata(formData.phone, 'phone')) {
-            result.msg = '手机号格式不正确！';
+        // 验证原密码是否为空
+        if (!_mm.validata(formData.password, 'require')) {
+            result.msg = '原密码不能为空！';
             return result;
         }
-        // 验证邮箱
-        if (!_mm.validata(formData.email, 'email')) {
-            result.msg = '邮箱格式不正确！';
+        // 验证新密码长度
+        if (!formData.passwordNew || formData.passwordNew.length < 6) {
+            result.msg = '新密码长度不得少于6位！';
             return result;
         }
         // 验证密码提示问题是否为空
-        if (!_mm.validata(formData.question, 'require')) {
-            result.msg = '密码提示问题不能为空！';
-            return result;
-        }
-        // 验证密码提示问题答案是否为空
-        if (!_mm.validata(formData.answer, 'require')) {
-            result.msg = '密码提示问题答案不能为空！';
+        if (formData.passwordNew !== formData.passwordConfirm) {
+            result.msg = '两次输入的新密码不一致！';
             return result;
         }
         // 通过验证，返回正确提示

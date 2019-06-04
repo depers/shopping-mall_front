@@ -2,7 +2,7 @@
  * @Author: depers(fengxiao) 
  * @Date: 2019-04-28 11:29:13 
  * @Last Modified by: depers
- * @Last Modified time: 2019-06-04 17:10:16
+ * @Last Modified time: 2019-06-04 18:49:27
  */
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -35,6 +35,7 @@ var config = {
         'user-pass-reset'	    : ['./src/page/user-pass-reset/index.js'],
         'user-center'	        : ['./src/page/user-center/index.js'],
         'user-center-update'	: ['./src/page/user-center-update/index.js'],
+        'user-pass-update'  	: ['./src/page/user-pass-update/index.js'],
         'result'	            : ['./src/page/result/index.js'],
     },
     output: {
@@ -94,6 +95,7 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
         new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '用户密码重置')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '用户密码修改')),
         new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
         new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
         new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
