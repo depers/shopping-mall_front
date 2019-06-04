@@ -2,7 +2,7 @@
  * @Author: depers 
  * @Date: 2019-05-31 11:42:08 
  * @Last Modified by: depers
- * @Last Modified time: 2019-06-04 16:41:18
+ * @Last Modified time: 2019-06-04 18:09:59
  */
 'use strict';
 
@@ -92,6 +92,15 @@ var _user = {
             error: reject
         });
     },
+    // 获取用户信息
+    getUserInfo : function (resolve, reject) {
+        _mm.request({
+            url: _mm.getServerUrl('/user/get_information.do'),
+            method: 'POST',
+            success: resolve,
+            error: reject
+        });
+    }
 }
 
 module.exports = _user;

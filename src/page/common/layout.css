@@ -2,7 +2,7 @@
  * @Author: depers 
  * @Date: 2019-05-30 17:09:19 
  * @Last Modified by: depers
- * @Last Modified time: 2019-05-31 10:50:08
+ * @Last Modified time: 2019-06-04 17:36:38
  */
 
 /* css reset */
@@ -38,7 +38,23 @@ input[type='checkbox']{
 .large .w{
     width: 1600px;
 }
-
+/* panel */
+.panel{
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+.panel .panel-title{
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+.panel .panel-body{
+    padding: 10px;
+    overflow: hidden;
+}
 
 /* 全局通用样式 */
 /* 隐藏类 */

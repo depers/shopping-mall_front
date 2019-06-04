@@ -2,7 +2,7 @@
  * @Author: depers 
  * @Date: 2019-05-31 12:24:24 
  * @Last Modified by: depers
- * @Last Modified time: 2019-05-31 14:45:38
+ * @Last Modified time: 2019-06-04 17:17:57
  */
 /* 通用头部导航 */
  .header .logo{
@@ -34,4 +34,14 @@
     height: 44px;
     line-height: 44px;
     width: 90px;
+}
+/* 面包屑导航 */
+.crumb{
+    margin-bottom: 15px;
+    height: 50px;
+    line-height: 50px;
+    background: #eee;
+    color: #888;
+    font-size: 14px;
+    border-top: 2px solid #c60023;
 }
