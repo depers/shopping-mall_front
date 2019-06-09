@@ -2,8 +2,9 @@
  * @Author: depers(fengxiao) 
  * @Date: 2019-04-28 12:34:30 
  * @Last Modified by: depers
- * @Last Modified time: 2019-06-09 12:08:43
+ * @Last Modified time: 2019-06-09 12:53:48
  */
+ /* keywords-list */
 .keywords-list{
     float: left;
     width: 240px;
@@ -27,4 +28,51 @@
 }
 .keywords-list .keywords-item:hover{
     background: #999;
+}
+/* banner-con */
+.banner-con{
+    width: 830px;
+    height: 370px;
+    float: left;
+    background: #eee;
+}
+.banner-con .loading{
+    margin-top: 150px;
+}
+/* floor */
+.floor-wrap .floor-title{
+    height: 50px;
+    line-height: 50px;
+    color: #d58717;
+    font-weight: normal;
+    font-size: 20px;
+    border-bottom: 1px solid #d58717;
+}
+.floor-wrap .floor-list{
+    margin-right: -20px;
+    overflow: hidden;
+}
+.floor-wrap .floor-list .floor-item{
+    position: relative;
+    width: 200px;
+    height: 220px;
+    margin: 15px 20px 15px 0;
+    float: left;
+    cursor: pointer;
+    background: #fff;
+}
+.floor-wrap .floor-list .floor-item .floor-text{
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    font-size: 16px;
+    color: #555;
+}
+.floor-wrap .floor-list .floor-item .floor-img{
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+    width: 80%;
+    height: 75%;
+    border: none;
 }
