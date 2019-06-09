@@ -1,7 +1,30 @@
 /*
  * @Author: depers(fengxiao) 
  * @Date: 2019-04-28 12:34:30 
- * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2019-05-29 17:33:08
+ * @Last Modified by: depers
+ * @Last Modified time: 2019-06-09 12:08:43
  */
-
+.keywords-list{
+    float: left;
+    width: 240px;
+    height: 350px;
+    padding: 10px 0;
+    margin-right: 10px;
+    background: #666;
+    color: #fff;
+}
+.keywords-list  .keywords-item{
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+}
+.keywords-list  .keywords-item .link{
+    color: #fff;
+}
+.keywords-list  .keywords-item .link:hover{
+    color: #c60023;
+}
+.keywords-list .keywords-item:hover{
+    background: #999;
+}
