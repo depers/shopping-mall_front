@@ -1,0 +1,39 @@
+/*
+ * @Author: depers 
+ * @Date: 2019-06-10 18:24:53 
+ * @Last Modified by: depers
+ * @Last Modified time: 2019-06-10 21:01:42
+ */
+/* 排序按钮 */
+.sort-con{
+    overflow: auto;
+}
+.sort-con .sort-item{
+    float: left;
+    display: inline-block;
+    position: relative;
+    padding: 0 8px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #ccc;
+    margin-right: -1px;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+}
+.sort-con .sort-item.active{
+    background: #c60023;
+    border: 1px solid #c60023;
+    color: #fff;
+}
+.sort-con .sort-item .fa-sort-desc{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+.sort-con .sort-item.asc .fa-sort-desc{
+    opacity: .6;
+}
+.sort-con .sort-item.desc .fa-sort-asc{
+    opacity: .6;
+}

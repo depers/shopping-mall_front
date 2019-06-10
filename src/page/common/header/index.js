@@ -2,7 +2,7 @@
  * @Author: depers 
  * @Date: 2019-05-31 12:21:16 
  * @Last Modified by: depers
- * @Last Modified time: 2019-05-31 14:45:16
+ * @Last Modified time: 2019-06-10 20:08:28
  */
 'use strict';
 var _mm = require('util/mm.js');
@@ -11,6 +11,7 @@ require('./index.css');
 // 通用页面头部导航
 var header = {
     init : function(){
+        this.onLoad();
         this.bindEvent();
     },
     onLoad : function(){

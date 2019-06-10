@@ -2,13 +2,13 @@
  * @Author: depers 
  * @Date: 2019-05-30 14:33:51 
  * @Last Modified by: depers
- * @Last Modified time: 2019-06-03 17:00:39
+ * @Last Modified time: 2019-06-10 21:07:33
  */
 'use strict'
 
 var Hogan = require('hogan.js');
 var conf = {
-    serverHost: 'http://39.106.115.25',
+    serverHost: 'http://api.bravedawn.cn/',
 };
 
 var _mm = {
@@ -20,6 +20,10 @@ var _mm = {
             url: param.url || '',
             dataType: param.type || 'json',
             data: param.data || '',
+            xhrFields: {
+                withCredentials: true
+            },
+            crossDomain:true,
             success: function (res) {
                 // 请求成功
                 if (0 === res.status) {

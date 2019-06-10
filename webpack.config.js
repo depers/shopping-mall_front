@@ -2,7 +2,7 @@
  * @Author: depers(fengxiao) 
  * @Date: 2019-04-28 11:29:13 
  * @Last Modified by: depers
- * @Last Modified time: 2019-06-04 18:49:27
+ * @Last Modified time: 2019-06-10 20:02:19
  */
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -30,6 +30,7 @@ var config = {
         // 配置输入文件，其中common必须和后面路径中的common文件夹对应
         'common'	            : ['./src/page/common/index.js'],
         'index' 	            : ['./src/page/index/index.js'],
+        'list' 	            : ['./src/page/list/index.js'],
         'user-login'	        : ['./src/page/user-login/index.js'],
         'user-register'	        : ['./src/page/user-register/index.js'],
         'user-pass-reset'	    : ['./src/page/user-pass-reset/index.js'],
@@ -92,6 +93,7 @@ var config = {
         new ExtractTextPlugin("css/[name].css"),
         // 配置html模板
         new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+        new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),
         new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
         new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '用户密码重置')),
