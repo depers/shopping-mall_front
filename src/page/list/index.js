@@ -2,7 +2,7 @@
  * @Author: depers 
  * @Date: 2019-06-10 18:24:56 
  * @Last Modified by: depers
- * @Last Modified time: 2019-06-11 15:13:43
+ * @Last Modified time: 2019-06-11 16:04:50
  */
 'use strict';
 
@@ -102,9 +102,14 @@ var page = {
     },
     // 加载分页信息
     loadPagination : function(pageInfo){
+        var _this = this;
         this.pagination ? '' : (this.pagination = new Pagination());
         this.pagination.render($.extend({}, pageInfo, {
-            container : $('.pagination')
+            container : $('.pagination'),
+            onSelectPage : function(pageNum){
+                _this.data.listParam.pageNum = pageNum;
+                _this.loadList();
+            }
         }))
     }
 };

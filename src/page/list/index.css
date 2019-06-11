@@ -2,7 +2,7 @@
  * @Author: depers 
  * @Date: 2019-06-10 18:24:53 
  * @Last Modified by: depers
- * @Last Modified time: 2019-06-10 21:40:58
+ * @Last Modified time: 2019-06-11 16:01:00
  */
 /* 排序按钮 */
 .sort-con{
@@ -75,4 +75,8 @@
     margin-bottom: 10px;
     color: #666;
     text-decoration: none;
+}
+/* 分页器 */
+.pagination{
+    margin-bottom: 20px;
 }
