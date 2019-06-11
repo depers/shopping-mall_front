@@ -2,7 +2,7 @@
  * @Author: depers 
  * @Date: 2019-06-10 18:24:56 
  * @Last Modified by: depers
- * @Last Modified time: 2019-06-11 13:54:53
+ * @Last Modified time: 2019-06-11 15:13:43
  */
 'use strict';
 
@@ -12,6 +12,7 @@ require('page/common/nav/index.js');
 var _mm = require('util/mm.js');
 var tempalteHtml = require('./index.string');
 var _product = require('service/product-service.js');
+var Pagination = require('util/pagination/index.js');
 
 var page = {
     data : {
@@ -85,7 +86,14 @@ var page = {
                     list : res.list
                 });
                 $pListCon.html(listHtml);
-                _this.loadPagination(res.pageNum, res.pages);
+                _this.loadPagination({
+                    hasPreviousPage : res.hasPreviousPage,
+                    prePage         : res.prePage,
+                    hasNextPage     : res.hasNextPage,
+                    nextPage        : res.nextPage,
+                    pageNum         : res.pageNum,
+                    pages           : res.pages
+                });
             },            
             function(errMsg){
                 _mm.errorTips(errMsg);
@@ -93,8 +101,11 @@ var page = {
         )
     },
     // 加载分页信息
-    loadPagination : function(pageNum, pages){
-        
+    loadPagination : function(pageInfo){
+        this.pagination ? '' : (this.pagination = new Pagination());
+        this.pagination.render($.extend({}, pageInfo, {
+            container : $('.pagination')
+        }))
     }
 };
 
