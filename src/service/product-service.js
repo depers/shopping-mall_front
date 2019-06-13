@@ -2,7 +2,7 @@
  * @Author: depers 
  * @Date: 2019-06-10 20:03:16 
  * @Last Modified by: depers
- * @Last Modified time: 2019-06-10 20:52:56
+ * @Last Modified time: 2019-06-13 18:16:59
  */
 'use strict';
 
@@ -18,6 +18,17 @@ var _product = {
             error: reject
         });
     },
+    // 获取商品详情
+    getProductDetail : function(productId, resolve, reject) {
+        _mm.request({
+            url: _mm.getServerUrl('/product/detail.do'),
+            data : {
+                productId : productId
+            },
+            success: resolve,
+            error: reject
+        });
+    }
     
 }
 

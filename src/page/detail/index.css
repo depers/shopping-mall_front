@@ -2,7 +2,7 @@
  * @Author: depers 
  * @Date: 2019-06-13 16:29:28 
  * @Last Modified by: depers
- * @Last Modified time: 2019-06-13 18:02:25
+ * @Last Modified time: 2019-06-13 18:13:47
  */
  /* 图片信息 */
  .intro-wrap{
@@ -140,4 +140,14 @@
 .detail-wrap .detail-con img{
     display: block;
     margin: 0 auto;
+}
+/* 错误信息 */
+.err-tip{
+    height: 60px;
+    line-height: 60px;
+    color: #f60;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background: #eee;
 }

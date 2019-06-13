@@ -2,7 +2,7 @@
  * @Author: depers 
  * @Date: 2019-06-13 16:31:59 
  * @Last Modified by: depers
- * @Last Modified time: 2019-06-13 16:45:35
+ * @Last Modified time: 2019-06-13 18:39:33
  */
 'use strict';
 
@@ -38,7 +38,26 @@ var page = {
     },
     // 加载商品详细信息
     loadDetail : function(){
-        
+        var _this = this,
+            html = '',
+            $pageWrap = $('.page-wrap');
+        // loading
+        $pageWrap.html('<div class="loading"></div>');
+        // 请求detail信息
+        _product.getProductDetail(
+            this.data.listParam.productId,
+            function(res){
+                _this.filter(res);
+                html = _mm.renderHtml(tempalteHtml, res);
+                $('.page-wrap').html(html);
+            },
+            function(errMsg){
+                $('.page-wrap').html('<p class="err-tip">此商品太淘气，找不到了~</p>')
+            })
+    },
+    // 数据匹配
+    filter : function(data){
+        data.subImg = data.subImg.split(',');
     }
 };
 
